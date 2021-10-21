@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="text-center row justify-content-center" style="height: 80%; margin-top: 5%;">
+    <div class="col-lg-4">
+
+    </div>
+    <div class="col-lg-4">
+        @if (Request.IsAuthenticated)
+        {
+            @Html.Partial("_Dashboard")
+        }
+        else
+        {
+            <h1 id="titleText">
+                Quick-Note
+            </h1>
+            <p class="lead"> Welcome to Quick-Note, a simple app for creating and managing notes. Organizing your thoughts will be just a click away!</p>
+            <p class="lead">
+
+                @Html.ActionLink("Sign Up", "Register", "Account",null, htmlAttributes: new {@class = "btn btn-lg btn-secondary" })
+            </p>
+        }
+
+
+
+    </div>
+    <div class="col-lg-4">
+
+    </div>
+</div>
+

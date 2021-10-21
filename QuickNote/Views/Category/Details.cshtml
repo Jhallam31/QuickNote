@@ -1,0 +1,61 @@
+﻿@model QuickNote.Models.CategoryModels.CategoryDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+<h1 class="text-center">My @Html.DisplayFor(model=>model.CategoryName) Notes</h1>
+
+<div>
+    <hr />
+    <dl>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.NotesInThisCategory) (@Html.DisplayFor(model=>model.NoteCount))
+        </dt>
+
+    </dl>
+    <div class="card-deck">
+        <div class="row">
+            @foreach (var note in Model.NotesInThisCategory)
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+
+
+                <div class="card bg-dark text-light col-5.5" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center font-weight-bold"> @Html.DisplayFor(modelItem => note.Title)</h5>
+                        <p class="card-text text-center">@Html.DisplayFor(modelItem => note.Content)</p>
+                        <div class="collapse bg-secondary" id="collapseInfo">
+                            <div class="card-text ">
+                                <p> Created: @Html.DisplayFor(modelItem=>note.CreatedUtc)</p>
+                                <p> Last Updated: @Html.DisplayFor(modelItem=>note.ModifiedUtc)</p>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                    <p class="card-footer text-center">
+                        <a class="btn btn-info" data-toggle="collapse" data-target="#collapseInfo" role="button" aria-expanded="false" aria-controls="collapseInfo">
+                            More info
+                        </a>
+                    </p>
+                </div>
+                }
+                else
+                {
+                    <p class="text-center">
+                        Please sign in to view your notes for this category
+                    </p>
+                }
+
+            }
+        </div>
+    </div>
+            
+    
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - Quick-Note</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+<body class="text-white">
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <div class="container">
+                @Html.ActionLink("Quick-Note", "Index", "Home",  new { area = "" }, htmlAttributes: new { @class = "navbar-brand" })
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-expanded="true" >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse ">
+                    <ul class="navbar-nav list-inline mr-auto ">
+                        <li class="nav-item">@Html.ActionLink("Home", "Index", "Home" ,null,  htmlAttributes: new { @class="nav-link" })</li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">@Html.ActionLink("Notes", "Index", "Note", null, htmlAttributes: new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Categories", "Index", "Category", null, htmlAttributes: new { @class = "nav-link" })</li>
+                        }
+                        <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, htmlAttributes: new { @class = "nav-link" })</li>
+                    </ul>
+                    
+
+                    @Html.Partial("_LoginPartial")
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid body-content">
+            @RenderBody()
+
+            <footer class="text-center fixed-bottom">
+            <hr />
+                <p>&copy; @DateTime.Now.Year - Quick-Note</p>
+            </footer>
+        </div>
+
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/Bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<QuickNote.Models.NoteModels.NoteListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center">My Notes</h2>
+<p class="text-center">
+    @Html.ActionLink("Create New", "Create", null, htmlAttributes: new { @class = "btn btn-outline-light " })
+</p>
+<div class="card-deck">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+            <div class="card bg-dark text-light col-5.5" style="width: 18rem;">
+                <h5 class="card-header text-center font-weight-bold"> @Html.DisplayFor(modelItem => item.Title)</h5>
+                <hr />
+                <div class="card-body">
+                    <p class="card-text text-center"><strong>Category:</strong> @Html.DisplayFor(modelItem => item.CategoryName)</p>
+                    <div class="collapse bg-secondary" id="collapseInfo">
+                        <div class="card-text ">
+                            <p> Created: @Html.DisplayFor(modelItem => item.CreatedUtc)</p>
+                            <p> Last Updated: @Html.DisplayFor(modelItem => item.ModifiedUtc)</p>
+                        </div>
+                        <div class="text-center">
+
+                            @Html.ActionLink("Edit", "Edit", new { id = item.NoteId }, htmlAttributes: new { @class = "btn btn-warning btn-sm" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.NoteId }, htmlAttributes: new { @class = "btn btn-info btn-sm" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.NoteId }, htmlAttributes: new { @class = "btn btn-danger btn-sm" })
+                        </div>
+                    </div>
+
+                </div>
+                <p class="card-footer text-center">
+                    <a class="btn btn-info" data-toggle="collapse" data-target="#collapseInfo" role="button" aria-expanded="false" aria-controls="collapseInfo">
+                        More info
+                    </a>
+                </p>
+            </div>
+
+        }
+        </div>
+</div>
