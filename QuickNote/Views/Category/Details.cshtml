@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Details";
 }
-<h1 class="text-center">My @Html.DisplayFor(model=>model.CategoryName) Notes</h1>
+<h1 class="text-center">@Html.DisplayFor(model=>model.CategoryName) Notes</h1>
 
 <div>
     <hr />
@@ -56,6 +56,6 @@
     
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }, htmlAttributes: new { @class = " text-light text-decoration-none" }) |
+    @Html.ActionLink("Back to List", "Index",null,htmlAttributes: new { @class = " text-light text-decoration-none" })
 </p>
