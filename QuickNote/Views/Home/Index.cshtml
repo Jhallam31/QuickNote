@@ -13,13 +13,16 @@
         }
         else
         {
-            <h1 id="titleText">
-                Quick-Note
-            </h1>
-            <p class="lead"> Welcome to Quick-Note, a simple app for creating and managing notes. Organizing your thoughts will be just a click away!</p>
+            <div class="typewriter">
+                <h1 id="titleText">
+                    Quick-Note
+                </h1>
+            </div>
+            
+            <p class="lead fade-in"> Welcome to Quick-Note, a simple app for creating and managing notes. Organizing your thoughts will be just a click away!</p>
             <p class="lead">
 
-                @Html.ActionLink("Sign Up", "Register", "Account",null, htmlAttributes: new {@class = "btn btn-lg btn-secondary" })
+                @Html.ActionLink("Sign Up", "Register", "Account", null, htmlAttributes: new { @class = "btn btn-lg btn-secondary" })
             </p>
         }
 

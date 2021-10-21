@@ -38,7 +38,51 @@ textarea {
 .textbox{
     max-width: 300px;
 }
+/*Begin Typewriter effect*/
 
+.typewriter h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
 
+    50% {
+        border-color: orange;
+    }
+}
 
+@keyframes typing {
+    from {
+        width: 0
+    }
 
+    to {
+        width: 100%
+    }
+}
+
+/*Begin Fadin animation*/
+.fade-in {
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+    -moz-animation: fadeIn ease 5s;
+    -o-animation: fadeIn ease 5s;
+    -ms-animation: fadeIn ease 5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
