@@ -20,7 +20,7 @@ After copying the link to your clipboard, head to Visual Studio (or your IDE of 
 
 Finally, now that you are in the QuickNote solution, right click on the Quick-Note project (be sure not to select the Data/Models/Services projects instead!). Select "Set as start up project". You can now run the program from the top tool bar start button seen in the image below.
 
-![Start Program Image](Resources\startProgram.JPG)
+![Start Program Image](https://github.com/Jhallam31/QuickNote/blob/master/Resources/startProgram.JPG)
 
 # Data Tables
 Current functional data tables and the applicable endpoints.
