@@ -12,7 +12,7 @@
 ## Getting Started
 Because this is an undeployed application, access the application by copying [this link](https://github.com/Jhallam31/QuickNote.git). You can also copy the link at the top of the repository (see image below). Select the green "code" button from the top right.
 
-![Code link Image](Resources\copyLinkImage.JPG)
+![Code link Image](https://github.com/Jhallam31/QuickNote/blob/master/Resources/cloneRepoImage.JPG)
 
 After copying the link to your clipboard, head to Visual Studio (or your IDE of choice) and select the option to clone a repository.
 
